@@ -186,6 +186,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &168788164 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5662799565086317041, guid: c397f1da67ce9004db73ec7ce310f025,
+    type: 3}
+  m_PrefabInstance: {fileID: 5662799565822018480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &709550362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,6 +1044,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662799565086317041, guid: c397f1da67ce9004db73ec7ce310f025,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662799565086317041, guid: c397f1da67ce9004db73ec7ce310f025,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662799565086317040, guid: c397f1da67ce9004db73ec7ce310f025,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 168788164}
+    - target: {fileID: 5662799565086317040, guid: c397f1da67ce9004db73ec7ce310f025,
+        type: 3}
+      propertyPath: speed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c397f1da67ce9004db73ec7ce310f025, type: 3}

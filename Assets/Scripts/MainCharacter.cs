@@ -15,10 +15,10 @@ public class MainCharacter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left * speed;
+            transform.position += Vector3.left * speed * Time.deltaTime;
         } else if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += Vector3.right * speed;
+            transform.position += Vector3.right * speed * Time.deltaTime;
         }
     }
 }

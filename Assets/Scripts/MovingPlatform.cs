@@ -3,6 +3,7 @@
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private float speed;
+    
 
     void Start()
     {
@@ -11,6 +12,7 @@ public class MovingPlatform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.position += Vector3.up * speed;
+            
+            transform.position += Vector3.up * speed * Time.deltaTime;
     }
 }

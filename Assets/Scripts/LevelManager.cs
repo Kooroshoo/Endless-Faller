@@ -10,11 +10,13 @@ public class LevelManager : MonoBehaviour
     public Text scoreText;
     public GameObject gameover;
     public GameObject pause;
+    public GameObject HighScoreText;
     private bool isPaused = false;
     private bool isGameover = false;
 
     void Start()
     {
+        HighScoreText.SetActive(false);
         isGameover = false;
         gameover.SetActive(false);
         pause.SetActive(false);
@@ -45,6 +47,12 @@ public class LevelManager : MonoBehaviour
     {
         gameover.SetActive(true);
         isGameover = true;
+        
+        if (PlayerPrefs.GetInt("HighScore") < Score)
+        {
+            HighScoreText.SetActive(true);
+            PlayerPrefs.SetInt("HighScore", Score);
+        }
  
     }
 

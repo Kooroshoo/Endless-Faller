@@ -28,4 +28,13 @@ public class MainCharacter : MonoBehaviour
     {
         levelManager.IncrementScore();
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Losing")
+        {
+            Object.Destroy(this.gameObject);
+            levelManager.GameOver();
+        }
+
+    }
 }

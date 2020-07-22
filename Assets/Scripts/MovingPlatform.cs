@@ -16,6 +16,10 @@ public class MovingPlatform : MonoBehaviour
     void Update()
     {
             
-            transform.position += Vector3.up * speed * Time.deltaTime;
+        transform.position += Vector3.up * speed * Time.deltaTime;
+        if (this.transform.position.y>20)
+        {
+            Object.Destroy(this.gameObject);
+        }
     }
 }

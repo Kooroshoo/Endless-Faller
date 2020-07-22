@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     private bool isPaused = false;
     private bool isGameover = false;
 
+
     void Start()
     {
         HighScoreText.SetActive(false);
@@ -30,6 +31,9 @@ public class LevelManager : MonoBehaviour
         {
             PauseGame();
         }
+
+
+
     }
 
     public void IncrementScore()

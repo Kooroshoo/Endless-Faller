@@ -7,6 +7,8 @@ public class CreatingPlatforms : MonoBehaviour
     [SerializeField] private GameObject[] platforms;
     public float instantiateRateInSeconds;
     public float platformSpeed;
+    private float totalTime;
+    public float DifficultyRate = 0.1f;
     
 
     float elapsedTime = 0;
@@ -14,6 +16,7 @@ public class CreatingPlatforms : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        totalTime = 0;
         Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 2, -8), Quaternion.identity);
     }
 
@@ -26,9 +29,17 @@ public class CreatingPlatforms : MonoBehaviour
             Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 2, -8), Quaternion.identity);
             elapsedTime = 0;
         }
-        
-        
-        
+
+        totalTime += Time.deltaTime;
+        if (totalTime > 10)
+        {
+            platformSpeed = platformSpeed + DifficultyRate*2;
+            instantiateRateInSeconds = instantiateRateInSeconds - DifficultyRate;
+            totalTime = 0;
+        }
+
+
+
     }
 
 }

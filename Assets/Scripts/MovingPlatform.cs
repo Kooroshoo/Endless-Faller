@@ -2,11 +2,14 @@
 
 public class MovingPlatform : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    float speed;
+    CreatingPlatforms creatingPlatforms;
     
 
     void Start()
     {
+        creatingPlatforms = FindObjectOfType<CreatingPlatforms>();
+        speed = creatingPlatforms.platformSpeed;
     }
 
     // Update is called once per frame

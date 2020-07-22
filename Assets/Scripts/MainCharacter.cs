@@ -5,9 +5,11 @@ using UnityEngine;
 public class MainCharacter : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private LevelManager levelManager;
+
     void Start()
     {
-        
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -20,5 +22,10 @@ public class MainCharacter : MonoBehaviour
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        levelManager.IncrementScore();
     }
 }

@@ -14,7 +14,7 @@ public class CreatingPlatforms : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 0, -8), Quaternion.identity);
+        Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 2, -8), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class CreatingPlatforms : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if (elapsedTime>= instantiateRateInSeconds)
         {
-            Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 0, -8), Quaternion.identity);
+            Instantiate(platforms[Random.Range(0, 5)], new Vector3(0, 2, -8), Quaternion.identity);
             elapsedTime = 0;
         }
         

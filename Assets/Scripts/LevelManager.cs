@@ -8,19 +8,26 @@ public class LevelManager : MonoBehaviour
 {
     public int Score { get; private set; }
     public Text scoreText;
-    public GameObject gameoverText;
-    public GameObject pauseText;
+    public GameObject gameover;
+    public GameObject pause;
+    private bool isPaused = false;
+    private bool isGameover = false;
 
     void Start()
     {
-        gameoverText.SetActive(false);
-        pauseText.SetActive(false);
+        isGameover = false;
+        gameover.SetActive(false);
+        pause.SetActive(false);
 
     }
 
     void Update()
     {
         scoreText.text = "Score: " + Score.ToString();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
 
     public void IncrementScore()
@@ -36,6 +43,30 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameoverText.SetActive(true);
+        gameover.SetActive(true);
+        isGameover = true;
+ 
+    }
+
+    public void PauseGame()
+    {
+        if (isPaused && !isGameover)
+        {
+            pause.SetActive(false);
+            Time.timeScale = 1;
+            isPaused = false;
+        }
+        else if (!isPaused && !isGameover)
+        {
+            pause.SetActive(true);
+            Time.timeScale = 0;
+            isPaused = true;
+
+        }
+    }
+
+    public void LaodLevel(string str)
+    {
+        Application.LoadLevel(str);
     }
 }

@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public int Score { get; private set; }
     public Text scoreText;
+    public Text scoreTextAndHighScore;
     public GameObject gameover;
     public GameObject pause;
     public GameObject HighScoreText;
@@ -51,7 +52,8 @@ public class LevelManager : MonoBehaviour
     {
         gameover.SetActive(true);
         isGameover = true;
-        
+        scoreTextAndHighScore.text = "Your current Score: " + Score + "\n\n" +  "Your Highscore was : " + PlayerPrefs.GetInt("HighScore");
+
         if (PlayerPrefs.GetInt("HighScore") < Score)
         {
             HighScoreText.SetActive(true);

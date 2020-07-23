@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         HighScoreText.SetActive(false);
         isGameover = false;
         gameover.SetActive(false);
@@ -33,7 +34,10 @@ public class LevelManager : MonoBehaviour
             PauseGame();
         }
 
-
+        if (PlayerPrefs.GetInt("HighScore") < Score)
+        {
+            scoreText.color = Color.green;
+        }
 
     }
 

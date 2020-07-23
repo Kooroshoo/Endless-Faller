@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
-        StartCoroutine(LoadScene(gameScene));
+        Application.LoadLevel(gameScene);
     }
 
     public void Exit()
@@ -18,10 +18,5 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    private IEnumerator LoadScene(string sceneName)
-    {
-        Debug.Log("Loading game!");
-        yield return new WaitForSeconds(.4f);
-        SceneManager.LoadScene(sceneName);
-    }
+
 }

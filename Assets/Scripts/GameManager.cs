@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadScene(gameScene));
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator LoadScene(string sceneName)
     {
         Debug.Log("Loading game!");

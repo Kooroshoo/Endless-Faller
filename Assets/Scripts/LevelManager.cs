@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
     {
         gameover.SetActive(true);
         isGameover = true;
-        scoreTextAndHighScore.text = "Your current Score: " + Score + "\n\n" +  "Your Highscore was : " + PlayerPrefs.GetInt("HighScore");
+        scoreTextAndHighScore.text = "Your Highscore was : " + PlayerPrefs.GetInt("HighScore") +"\n" +  "Your current Score: " + Score ;
 
         if (PlayerPrefs.GetInt("HighScore") < Score)
         {

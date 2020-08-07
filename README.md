@@ -7,7 +7,6 @@ A simple endless falling game where the character must fall between platforms to
 # Requirements 
 
 - On the main menu, I should see the current highscore and when pressing play, change to the game scene. 
-- On the game scene, the game functionality should be similar to the one in the gif. 
 - When the character is out of screen, either because he couldn't fall fast enough or he fell before the next platform was available, the player should lose. 
 - Every time the character goes down a floor, his score should increase. 
 - The platforms should be randomly generated. No two playthroughs should have the same pattern. 
